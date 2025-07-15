@@ -1,29 +1,39 @@
 <?php
 
-$variable = "variable";
-$name = "name";
-echo "my name is $name";
-echo $variable;
+$x = 10;
+$y = 3;
 
-echo "<br>";
-// int 
-$age = 32;
-echo "<br>";
-echo "my age $age";
-echo "<br>";
+$z = $x + $y;
+echo "$z";
 
-$gpa = 2.5;
-echo "my gpa 2.5";
+$r = $x ** $y;
+echo "$r <br>";
 
-echo "<br>";
-$price = 4.99;
+// increment/decrement 
 
-echo "price \${$price}";
+$counter = 0;
+// $counter++;
+$counter+=2;
+echo"$counter";
 
-echo "<br>";
+// operator precedence 
 
-$employed = true;
+// ()
+//  ** 
+// * / % 
+//  + - 
 
-echo "you are $age YEARS OLD AND HAVE A GPA OF $gpa"
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>
