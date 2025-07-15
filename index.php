@@ -18,6 +18,12 @@ echo "my gpa 2.5";
 echo "<br>";
 $price = 4.99;
 
-echo "price \${$price}"
+echo "price \${$price}";
+
+echo "<br>";
+
+$employed = true;
+
+echo "you are $age YEARS OLD AND HAVE A GPA OF $gpa"
 
 ?>
