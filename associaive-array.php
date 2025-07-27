@@ -48,3 +48,9 @@ echo count($capitals);
 foreach ($capitals as $key => $value) {
     echo "$key = $value";
 };
+
+
+
+// isset  -- return true if variable is declared and not null
+
+// empty ---  return true if variable is not declarred null or false or ""
