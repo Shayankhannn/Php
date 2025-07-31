@@ -24,6 +24,13 @@ if($a == $b or $c == $d){
 }
 
 
+$result = match ($a) {
+    1,3,6 => "variable a is equal to 1",
+    4 => "variablea is equal to 4" ,
+default => "none of this is true",
+};
+
+echo $result;
 
 
 
