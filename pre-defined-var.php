@@ -24,8 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $firstName = htmlspecialchars($_POST["name"]); // sanitize code
     // htmlentities() -- same as htmlspecial char but it take all sort of char and convert it to html entities
 
-}
+    header("Location: ../index.php");
 
+};
+if(empty($firstName)){
+    exit();
+    header("Location: ../index.php");
+}
 
 
 
