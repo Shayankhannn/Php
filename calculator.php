@@ -11,10 +11,51 @@
     <h1 style="font-size: 40px; font-weight: 600;">Calculator Using PHP</h1>
 </div>
 
+
+
+</body>
+</html>
+
+
+<?php
+$result = "";
+if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+    $operater = $_POST["operater"];
+$num1 = $_POST["num1"];
+$num2 = $_POST["num2"];
+
+if(is_numeric($num1) && is_numeric($num2)){
+ switch ($operater) {
+    case '+':
+       $result =   $num1 + $num2;
+        break;
+    case '-':
+       $result =  $num1 - $num2;
+        break;
+    case '*':
+       $result =  $num1 * $num2;
+        break;
+    case '/':
+       $result = ($num1 != 0 && $num2 != 0) ?  $num1 / $num2 : "cannot divide by zero";
+        break;
+    
+    default:
+        $resullt =  "unusual thing happen 😒";
+        break;
+};
+}else{
+    $result = "Please enter valid number 😒";
+};
+}else{
+    $result = "Please enter valid number";
+};
+
+?>
+
 <div style="display: flex; align-items: center; justify-content: center; background-color: #c6f6ffff;" >
     <form action="calculator.php" method="post">
         <div style="margin-bottom: 30px;">
-            <h3><?php  ?></h3>
+            <h3>Result :<?php echo $result; ?></h3>
         </div>
         <div>
             <input type="text" placeholder="first number" name="num1">
@@ -35,44 +76,3 @@
         </div>
     </form>
 </div>
-
-</body>
-</html>
-
-
-<?php
-
-if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-    $operater = $_GET["operater"];
-$num1 = $_GET["num1"];
-$num2 = $_GET["num2"];
-
-if(is_numeric($num1) && is_numeric($num2)){
- switch ($operater) {
-    case '+':
-       $result =   $num1 + $num2;
-        break;
-    case '-':
-       $result =  $num1 - $num2;
-        break;
-    case '*':
-       $result =  $num1 * $num2;
-        break;
-    case '/':
-       $result = ($num2 != 0) ?  $num1 / $num2 : "cannot divide by zero";
-        break;
-    
-    default:
-        $resullt =  "unusual thing happen 😒";
-        break;
-};
-};
-}else{
-    $result = "Please enter valid number";
-};
-
-
-
-
-
-?>
