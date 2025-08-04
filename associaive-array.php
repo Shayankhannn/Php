@@ -49,8 +49,22 @@ foreach ($capitals as $key => $value) {
     echo "$key = $value";
 };
 
+$fruits = ["apple", "banana","mango"];
+$test = ["srawberry","berry"];
+array_splice($fruits,1,0,$test);
+
+print_r($fruits);
+
+$food = [
+    array("apple", "banana","mango"),
+    array("srawberry","berry"),
+    "meat" => array("cow","sheep"),
+];
+echo $food[0][0];
+echo $food["meat"][0];
 
 
 // isset  -- return true if variable is declared and not null
 
 // empty ---  return true if variable is not declarred null or false or ""
+?>
