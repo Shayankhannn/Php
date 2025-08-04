@@ -46,9 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $operater = $_GET["operater"];
 $num1 = $_GET["num1"];
 $num2 = $_GET["num2"];
-}
-
-
 
 if(is_numeric($num1) && is_numeric($num2)){
  switch ($operater) {
@@ -66,9 +63,12 @@ if(is_numeric($num1) && is_numeric($num2)){
         break;
     
     default:
-        echo "unusual thing happen 😒";
+        $resullt =  "unusual thing happen 😒";
         break;
 };
+};
+}else{
+    $result = "Please enter valid number";
 };
 
 
