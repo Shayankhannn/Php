@@ -49,4 +49,20 @@ CREATE TABLE comments (
 );
 
 
+<!-- insert  -->
 
+INSERT INTO users (username,pwd,email) VALUES ('DANI','DANI123','JOHNDOE@GMAIL.COM')
+
+<!-- UPDATE -->
+
+UPDATE users SET username = 'basse123" , pwd = 'basse!@#' WHERE id = 2
+
+
+UPDATE users SET username = 'basse123" , pwd = 'basse!@#' WHERE id = 2 OR username = 'kroissing'
+
+<!-- DELETE 0 -->
+
+
+DELETE FROM users WHERE id = 3
+
+INSERT INTO comments (username,comment_text,users_id) VALUES ('DANI','THIS IS COMMENT TESXT HE HE HE',1);
