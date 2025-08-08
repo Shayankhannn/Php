@@ -66,3 +66,30 @@ UPDATE users SET username = 'basse123" , pwd = 'basse!@#' WHERE id = 2 OR userna
 DELETE FROM users WHERE id = 3
 
 INSERT INTO comments (username,comment_text,users_id) VALUES ('DANI','THIS IS COMMENT TESXT HE HE HE',1);
+
+
+<!-- SELECT  -->
+
+SELECT username, email FROM users WHERE id = 2
+
+SELECT username, comment_text FROM comments WHERE id = 1
+
+
+SELECT * FROM comments WHERE id = 1
+
+<!-- JOINS  -->
+
+SELECT * FROM users INNER JOIN comments ON  users.id = comments.users_id
+
+SELECT users.username, comments.comment_text , comments.created_at FROM users INNER JOIN comments ON  users.id = comments.users_id
+
+
+
+
+
+
+
+
+
+
+
