@@ -84,11 +84,13 @@ SELECT * FROM users INNER JOIN comments ON  users.id = comments.users_id
 SELECT users.username, comments.comment_text , comments.created_at FROM users INNER JOIN comments ON  users.id = comments.users_id
 
 
+SELECT * FROM users LEFT JOIN comments ON  users.id = comments.users_id
 
+IN LEFT JOIN WE GET ALL THE USERS ALSO THOSE WHO DOESNT HAVE COMMENT IT WILL SHOW NULL 
 
+SELECT * FROM users RIGHT JOIN comments ON  users.id = comments.users_id
 
-
-
+IN RIGHT JOIN WE SHOW ALL THE COMMENTS BUT NOT ALL THE USERS 
 
 
 
