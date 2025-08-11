@@ -13,5 +13,22 @@
         <input type="password" name="password" placeholder="password" require >
     <button>Signup</button>
     </form>
+
+    <h2>Update Form</h2>
+    <form action="includes/userupdate.inc.php" method="post">
+        <input type="text" name="username" placeholder="username" require >
+        <input type="email" name="email" placeholder="email" require >
+        <input type="password" name="password" placeholder="password" require >
+    <button>Update</button>
+    </form>
+
+    <h2>Delete User</h2>
+    <form action="includes/userdelete.inc.php" method="post">
+        <input type="text" name="username" placeholder="username" require >
+        <input type="password" name="password" placeholder="password" require >
+    <button>delete</button>
+    </form>
+    
+
 </body>
 </html>
