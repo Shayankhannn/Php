@@ -57,7 +57,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "<p>There were no results</p>";
             echo "</div>";
         }else{
-            var_dump($results); 
+            // var_dump($results); 
+            foreach ($results as $row) {
+                echo  htmlspecialchars($row["username"]);
+                echo htmlspecialchars($row["comment_text"]);
+                echo htmlspecialchars($row["created_at"]) ;
+            }
         }
     
     ?>
