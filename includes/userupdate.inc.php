@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // $query = "INSERT INTO users (username,pwd,email) VALUES (?,?,?);"; we can write ? as place holder and tehn like this
         // $stmt->execute([$username,$pwd,$email]); OR :
         
-        $query = "INSERT INTO users (username,pwd,email) VALUES (:username,:pwd,:email);"; 
+        $query = "UPDATE  users SET username = :username , pwd = :pwd , email = :email where id = 2  ;"; 
         
 
         $stmt = $pdo->prepare($query );
