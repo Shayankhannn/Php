@@ -18,16 +18,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // $query = "INSERT INTO users (username,pwd,email) VALUES (?,?,?);"; we can write ? as place holder and tehn like this
         // $stmt->execute([$username,$pwd,$email]); OR :
-
+        
         $query = "INSERT INTO users (username,pwd,email) VALUES (:username,:pwd,:email);"; 
         
 
         $stmt = $pdo->prepare($query );
-
+        $stmt->bindParam(":username",$username);
+        $stmt->bindParam(":pwd",$pwd);
+        $stmt->bindParam(":email",$email);
+         $stmt->execute();
+        
+        
+        
         $pdo= null;
         $stmt = null;
 
         header("Location: ../index.php");
+
+        die();
 
     } catch (PDOException $e) {
         die("query failed" . $e->getMessage());
