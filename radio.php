@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+       
     <form method="post " action="index.php">
         <input type="radio" value="visa" name="card">
         <input type="radio" value="mastercard" name="card">
