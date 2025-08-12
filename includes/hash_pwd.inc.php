@@ -38,3 +38,26 @@ if($storedhash === $verifyinghash){
 
 // you can use above method when you want to hash finance related or email or like this
 
+// password hashing --- 
+
+
+$pwdSignup = "kroissing";
+
+password_hash($pwdSignup, PASSWORD_DEFAULT); // this one is default you dont have to worry about if any changes happen in php 
+$options = [
+    'cost' => 12,
+];
+$hashedpwd = password_hash($pwdSignup, PASSWORD_BCRYPT,$options); // this one is rn generally use in default but it is recommended to use bcrypt 
+
+// .. when user login again 
+
+
+$pwdLogin = "kroissing";
+
+password_verify($pwdLogin,$hashedpwd);
+
+if(password_verify($pwdLogin,$hashedpwd)){
+echo "they are the same login";
+}else{
+    echo"try again";
+};
