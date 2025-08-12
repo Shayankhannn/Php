@@ -21,10 +21,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         $query = "INSERT INTO users (username,pwd,email) VALUES (:username,:pwd,:email);"; 
         
+$options = [
+    'cost' => 12,
+];
+$hashedpwd = password_hash($pwd, PASSWORD_BCRYPT,$options);
 
         $stmt = $pdo->prepare($query );
         $stmt->bindParam(":username",$username);
-        $stmt->bindParam(":pwd",$pwd);
+        $stmt->bindParam(":pwd",$hashedpwd);
         $stmt->bindParam(":email",$email);
          $stmt->execute();
         
