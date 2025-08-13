@@ -12,21 +12,31 @@ if($_SERVER["REQUEST_METHOD"] === 'POST'){
       require_once 'signup_model.inc.php';
       require_once 'signup_controller.inc.php';
 
-      
+      $errors = [];
 
       if (is_input_empty($username,$pwd, $email)) {
-         # code...
-      }
+         $errors["empty_input"] = "Fill In All Field!" ;
+      };
       if (is_email_valid( $email)) {
-         # code...
-      }
+         
+         $errors["invalid_email"] = "Email Is Invalid!" ;
+      };
       if (is_username_taken( $pdo , $username)) {
-         # code...
-      }
+         $errors["username_taken"] = "This Username is already Taken!" ;
+         
+      };
       if (is_email_registered( $pdo , $email)) {
-         # code...
-      }
-      
+         $errors["email_registered"] = "This Email is already Registered!" ;
+         
+      };
+
+      require_once 'session_config.inc.php' ;
+
+         if($errors){
+            $_SESSION["errors_signup"] = $errors;
+            header("Location: ../index.php");
+            die();
+         };
 
    } catch (PDOException $e) {
     die("query failed--:" . $e->getMessage());

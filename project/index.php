@@ -1,3 +1,8 @@
+<?php 
+   require_once 'includes/session_config.inc.php';
+   require_once 'includes/signup_view.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,38 +16,42 @@
 <div class="auth-container">
     <div class="form-wrapper">
         <!-- Login Form -->
-        <form action="login.inc.php" method="POST" class="form-box">
+        <form action="includes/login.inc.php" method="POST" class="form-box">
             <h2>Login</h2>
             <div class="input-group">
-                <input type="text" name="username" required>
+                <input type="text" name="username" >
                 <label>Username</label>
             </div>
             <div class="input-group">
-                <input type="password" name="pwd" required>
+                <input type="password" name="pwd" >
                 <label>Password</label>
             </div>
             <button type="submit">Login</button>
         </form>
 
         <!-- Signup Form -->
-        <form action="signup.inc.php" method="POST" class="form-box">
+        <form action="includes/signup.inc.php" method="POST" class="form-box">
             <h2>Sign Up</h2>
             <div class="input-group">
-                <input type="text" name="username" required>
+                <input type="text" name="username" >
                 <label>Username</label>
             </div>
             <div class="input-group">
-                <input type="email" name="email" required>
+                <input type="email" name="email" >
                 <label>Email</label>
             </div>
             <div class="input-group">
-                <input type="password" name="pwd" required>
+                <input type="password" name="pwd" >
                 <label>Password</label>
             </div>
             <button type="submit">Sign Up</button>
         </form>
     </div>
 </div>
+
+<?php 
+check_signup_errors();
+?>
 
 </body>
 </html>
