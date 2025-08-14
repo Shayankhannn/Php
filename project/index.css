@@ -94,3 +94,22 @@ button {
 button:hover {
     background: #2b5876;
 }
+
+
+.errors {
+    /* background: rgba(255, 0, 0, 0.08); */
+    /* border: 1px solid rgba(255, 0, 0, 0.3); */
+    color: #b30000;
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.errors p {
+    margin: 0;
+}
+
+.errors:empty {
+    display: none; /* Hide box if there’s no error */
+}

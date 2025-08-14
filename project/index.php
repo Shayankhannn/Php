@@ -32,6 +32,11 @@
         <!-- Signup Form -->
         <form action="includes/signup.inc.php" method="POST" class="form-box">
             <h2>Sign Up</h2>
+                   <div class="errors">
+        <?php 
+check_signup_errors();
+?>
+</div>
             <div class="input-group">
                 <input type="text" name="username" >
                 <label>Username</label>
@@ -45,13 +50,12 @@
                 <label>Password</label>
             </div>
             <button type="submit">Sign Up</button>
+     
         </form>
     </div>
 </div>
 
-<?php 
-check_signup_errors();
-?>
+
 
 </body>
 </html>
