@@ -7,7 +7,7 @@ function signup_inputs(){
 
             if(isset($_SESSION["signup_data"]["username"]) && !isset($_SESSION["errors_signup"]["username_taken"])){
                 echo '          <div class="input-group">
-                <input type="text" name="username"  value="'. $_SESSION["signup_data"]["username"] .'">
+                <input type="text" name="username"  value="'. htmlspecialchars($_SESSION["signup_data"]["username"]).'">
                 <label>Username</label>
             </div>' ;
             }else{
@@ -21,7 +21,7 @@ function signup_inputs(){
             if(isset($_SESSION["signup_data"]["email"]) && !isset($_SESSION["errors_signup"]["email_registered"]) && !isset($_SESSION["errors_signup"]["invalid_email"])){
                 echo '
             <div class="input-group">
-                <input type="text" name="email" value="'. $_SESSION["signup_data"]["email"] .'">
+                <input type="text" name="email" value="'. htmlspecialchars($_SESSION["signup_data"]["email"]) .'">
                 <label>Email</label>
             </div>' ;
             }else{
@@ -36,6 +36,8 @@ function signup_inputs(){
                 <input type="password" name="pwd" >
                 <label>Password</label>
             </div>';
+
+          
             
 };
 function check_signup_errors(){
@@ -53,8 +55,9 @@ function check_signup_errors(){
 
 
     }elseif(isset($_GET["signup"]) && $_GET["signup"] === "success"){
+        unset($_SESSION["signup_data"]);
         echo "<br>";
-        echo "<p class='form-success'> Signup Success  </p>";
+        echo "<p style='color: rgba(60, 255, 76, 1);'> Signup Success  </p>";
     }
 
 };

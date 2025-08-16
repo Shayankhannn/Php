@@ -40,7 +40,7 @@ check_signup_errors();
             <?php
             signup_inputs();
             ?>
-            <button type="submit">Sign Up</button>
+            <button type="submit" >Sign Up</button>
      
         </form>
     </div>
