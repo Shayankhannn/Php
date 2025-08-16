@@ -37,18 +37,9 @@
 check_signup_errors();
 ?>
 </div>
-            <div class="input-group">
-                <input type="text" name="username" >
-                <label>Username</label>
-            </div>
-            <div class="input-group">
-                <input type="email" name="email" >
-                <label>Email</label>
-            </div>
-            <div class="input-group">
-                <input type="password" name="pwd" >
-                <label>Password</label>
-            </div>
+            <?php
+            signup_inputs();
+            ?>
             <button type="submit">Sign Up</button>
      
         </form>
