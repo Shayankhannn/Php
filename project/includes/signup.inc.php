@@ -37,8 +37,9 @@ if($_SERVER["REQUEST_METHOD"] === 'POST'){
             $signupData = [
                "username" => $username,
                "email" => $email,
-
+               
             ];
+
 
             $_SESSION["signup_data"] = $signupData;
 
