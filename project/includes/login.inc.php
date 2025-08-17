@@ -14,23 +14,25 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
    
         $errors = [];
 
-      if (is_input_empty($username,$pwd, $email)) {
+      if (is_input_empty($username,$pwd)) {
          $errors["empty_input"] = "Fill In All Field!" ;
       };
+
+      $result = get_user($pdo,$username);
+
+      if(is_username_wrong($result)){
+         $errors["login_incorrect"] = "Incorrect Login info !";
+      };
+      if(!is_username_wrong($result) && is_password_wrong($pwd,$result["pwd"])){
+         
+         $errors["login_incorrect"] = "Incorrect Login info !";
+      }
 
       require_once 'session_config.inc.php' ;
 
          if($errors){
             $_SESSION["errors_signup"] = $errors;
-            $signupData = [
-               "username" => $username,
-               "email" => $email,
-               
-            ];
-
-
-            $_SESSION["signup_data"] = $signupData;
-
+         
 
             header("Location: ../index.php");
             die();
