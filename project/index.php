@@ -17,6 +17,11 @@
     <div class="form-wrapper">
         <!-- Login Form -->
         <form action="includes/login.inc.php" method="POST" class="form-box">
+                       <div class="errors">
+        <?php 
+check_login_errors();
+?>
+</div>
             <h2>Login</h2>
             <div class="input-group">
                 <input type="text" name="username" >

@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
       require_once 'session_config.inc.php' ;
 
          if($errors){
-            $_SESSION["errors_signup"] = $errors;
+            $_SESSION["errors_login"] = $errors;
          
 
             header("Location: ../index.php");
