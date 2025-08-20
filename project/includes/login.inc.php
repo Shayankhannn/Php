@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
    try {
       require_once 'dbh.inc.php';
-      require_once 'model_model.inc.php';
+      require_once 'login_model.inc.php';
       require_once 'login_controller.inc.php';
    
         $errors = [];
@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
          $_SESSION["last_regeneration"] = time();
          
-         header("Location : ../index.php?login=success");
+         header("Location: ../index.php?login=success");
          $pdo = null;
          $stmt = null;
 
@@ -56,6 +56,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     die("query failed--:" . $e->getMessage());
    }
 }else{
-    header("Location : ../index.php");
+    header("Location: ../index.php");
     die();
 }
