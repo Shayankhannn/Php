@@ -42,7 +42,7 @@
    <form action="includes/login.inc.php" method="POST" class="form-box">
                        <div class="errors">
         <?php 
-check_login_errors();
+check_login_errors(); 
 ?>
 
 </div>
