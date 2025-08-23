@@ -25,16 +25,19 @@ class Car {
     $this->color = $color;
 
   }
+
+  // getter and setter method 
+  public function getBrand()
+  {
+    return $this->brand;
+  }
+  public function setBrand($brand)
+  {
+    return $this->brand = $brand;
+  }
   public function getcarinfo(){
     return  "Brand:" . $this->brand . "Color:" . $this->color;
   }
 
 }
 
-$car1 = new Car("volvo","blue");
-$car2 = new Car("bmw");
-echo $car2->vehicleType;
-
-
-
-echo $car1->getcarinfo();
