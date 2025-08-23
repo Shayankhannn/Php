@@ -1,5 +1,5 @@
-// classes are basically blue print or template eg : we have a factory that has a machine that has a blue print of car it can print as many cars as he want based on blueprint
 <?php
+// classes are basically blue print or template eg : we have a factory that has a machine that has a blue print of car it can print as many cars as he want based on blueprint
 
 // we have property and method inside class -- you should see property and method as same way as you see variable and function which is not true
 // property is information about particular object rn information about the car eg brand color vehicle type 
@@ -9,10 +9,32 @@
 
 // visibility modifier -- its a way to go inside a class and then say who has access to this information who has access to this property and method 
 
+
 class Car {
 
-  private  $brand = "volvo"; // private --  only this particular class has acces to this property 
-  protected  $color  = "green"; // protected -- this means not only this class have access to this property but another child class that extends to this class has access 
-//   public  $color  = "green";  public  -- this means everyone has access to this property
+  private  $brand ; // private --  only this particular class has acces to this property 
+  private  $color ; // protected -- this means not only this class have access to this property but another child class that extends to this class has access 
+  //   public  $color  = "green";  public  -- this means everyone has access to this property
+  public  $vehicleType = "car" ; // protected -- this means not only this class have access to this property but another child class that extends to this class has access 
+
+  // constructor
+
+  public function __construct($brand,$color = "none") //? these over here are not same as these above its just the same name
+  {
+    $this->brand = $brand;
+    $this->color = $color;
+
+  }
+  public function getcarinfo(){
+    return  "Brand:" . $this->brand . "Color:" . $this->color;
+  }
 
 }
+
+$car1 = new Car("volvo","blue");
+$car2 = new Car("bmw");
+echo $car2->vehicleType;
+
+
+
+echo $car1->getcarinfo();
