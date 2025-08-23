@@ -9,13 +9,16 @@
     <?php
 require_once 'Classes/Car.php';
 
-$car = new Car("audi","red") ;
+$car = new Car("audi") ;
 
 echo $car->vehicleType;
 echo $car->getBrand();
 echo $car->setBrand("ferrari");
 echo $car->getcarinfo();
+echo "<br>";
 
+ $car->setColor("bclack");
+echo $car->getColor();
 
 ?>
 </body>

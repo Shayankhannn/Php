@@ -27,6 +27,7 @@ class Car {
   }
 
   // getter and setter method 
+  
   public function getBrand()
   {
     return $this->brand;
@@ -34,6 +35,20 @@ class Car {
   public function setBrand($brand)
   {
     return $this->brand = $brand;
+  }
+  
+  public function getColor()
+  {
+    return $this->color;
+  }
+  public function setColor($color)
+  {
+    $allowedColor = ["red","yellow","green","black"];
+    if (in_array($color,$allowedColor)) {
+    
+       $this->color = $color;
+    }
+    
   }
   public function getcarinfo(){
     return  "Brand:" . $this->brand . "Color:" . $this->color;
