@@ -3,7 +3,7 @@
 class Dbh 
 {
     private $host = "localhost";
-    private $dbname = "php";
+    private $dbname = "oop";
     private $dbUsername = "root";
     private $dbPassword = "";
 
