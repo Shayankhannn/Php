@@ -10,7 +10,7 @@
 
     </h3>
 
-    <form action="includes/Signup.php" method="post">
+    <form action="includes/Signup.inc.php" method="post">
         <input type="text" name="username" placeholder="username">
         <input type="text" name="pwd" placeholder="password">
         <button>Signup</button>
